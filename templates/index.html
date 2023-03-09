@@ -6,7 +6,11 @@ Hi {{ user.username }}!
 <p><a href="{% url 'logout' %}">Log Out</a></p>
 
 
-
+<form method="post" action="{% url 'home' %}">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" name="first_button">oblicz</button>
+</form>
 
 
 {% else %}
